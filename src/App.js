@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Updated here
 import { Button, Container, Typography } from '@mui/material';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -24,11 +24,9 @@ const App = () => {
         <Typography variant="h4" gutterBottom>
           RTO Special Services
         </Typography>
-        <Switch>
-          <Route exact path="/">
-            <HomePage location={location} />
-          </Route>
-        </Switch>
+        <Routes> {/* Updated here */}
+          <Route path="/" element={<HomePage location={location} />} /> {/* Updated here */}
+        </Routes> {/* Updated here */}
       </Container>
     </Router>
   );
